@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Augustus | MwX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #0f0f1c, #1a1a2e);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #10101a;
+    }
+    header img {
+      width: 60px;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff0057;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
+    }
+    .tooltip {
+      position: relative;
+    }
+    .tooltip:hover::after {
+      content: 'В канале конфиг можете найти все кофиги';
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      padding: 5px 10px;
+      border-radius: 6px;
+      color: #fff;
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+    .tooltip1 {
+      position: relative;
+    }
+    .tooltip1:hover::after {
+      content: 'В канале конфиг можете найти все кофиги';
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      padding: 5px 10px;
+      border-radius: 6px;
+      color: #fff;
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+    .tooltip1:hover::after {
+      content: 'Чтобы его получить создайте тикет в дискорд канале и напишите @prem';
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      padding: 5px 10px;
+      border-radius: 6px;
+      color: #fff;
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+    }
+    .discord {
+      font-size: 2rem;
+      color: #7289da;
+      transition: 0.3s;
+    }
+    .discord:hover {
+      color: #99aab5;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="MwX Logo">
+        <nav>
+          <a href="index.html">Главная</a>
+          <a href="augustus.html">Augustus</a>
+          <a href="fdp.html">FDP</a>
+          <a href="https://youtube.com/@mwx_llc?si=Wj1mACsBS_iCAQJS">YT</a>
+        </nav>
+      </header>
+
+  <main>
+    <h1> Augustus</h1>
+    <p>Менее надежен от банов и киков по сравнению с FDP <br> но scaffold работает очень круто и не банится, <br>
+        но килка хуже чем у FDP , кфг еще тестируются</p>
+    <button class="btn" onclick="window.open('https://f94.workupload.com/download/BaGd5e3q6K5', '_blank')">Скачать Чит</button>
+    <div class="tooltip">
+      <button class="btn" onclick="window.open('https://discord.gg/fGQMZq96hd', '_blank')">Скачать КФГ</button>
+    </div>
+    <div class="tooltip1">
+        <button class="btn" onclick="window.open('https://discord.gg/fGQMZq96hd', '_blank')">Приватный кфг</button>
+      </div>
+    <button class="btn" onclick="window.open('https://youtu.be/AYR6FpMP3wg?si=ep4cRRHHg-rmXzQi', '_blank')">Туториал</button>
+    <button class="btn" onclick="window.open('https://youtu.be/pd5_bAqWIq0?si=66av21SD6ExwQwyy', '_blank')">Мини обзор</button>
+  </main>
+
+  <footer>
+    <a href="https://discord.gg/zc3b4jxXkg" target="_blank" class="discord"><i class="fab fa-discord"></i></a>
+  </footer>
+</body>
+</html>
