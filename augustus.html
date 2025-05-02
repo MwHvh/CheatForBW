@@ -116,6 +116,73 @@
       color: #99aab5;
       transform: scale(1.2);
     }
+     /* Частицы */
+  .particle {
+    position: fixed;
+    color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    font-size: 20px;
+    pointer-events: none;
+    animation: floatDown linear forwards;
+    z-index: 0;
+  }
+  /* Новый блок с подарком */
+  .gift-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    color: #ffcc00;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 3;
+  }
+  .gift-icon:hover {
+    transform: scale(1.2);
+    color: #ff9900;
+  }
+  
+  .gift-menu {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #10101a;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1rem;
+    z-index: 3;
+  }
+  
+  .gift-menu.active {
+    display: block;
+  }
+  
+  @keyframes floatDown {
+    from {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Фонарик */
+  .spotlight {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: transform 0.05s linear;
+  }
   </style>
 </head>
 <body>
@@ -147,5 +214,13 @@
   <footer>
     <a href="https://discord.gg/zc3b4jxXkg" target="_blank" class="discord"><i class="fab fa-discord"></i></a>
   </footer>
+  <!-- Иконка подарка -->
+  <div class="gift-icon" id="giftIcon"><i class="fas fa-gift"></i></div>
+
+  <!-- Меню подарка -->
+  <div class="gift-menu" id="giftMenu">
+    <p>!role mwxcfg - в дискорд сервере</p>
+  </div>
 </body>
+<script src="scritp.js"></script>
 </html>
