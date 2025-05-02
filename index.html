@@ -1,117 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MwX Cheats Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
-    body {
-      background: linear-gradient(135deg, #0f0f1c, #1a1a2e);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      background-color: #10101a;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-    header img {
-      width: 60px;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: #fff;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #ff0057;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #00ffcc;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 1rem 0;
-    }
-    p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-    .btn {
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #ff0057, #7a00ff);
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 0, 87, 0.7);
-    }
-    footer {
-      padding: 1rem;
-      text-align: center;
-    }
-    .discord, .youtube {
-      font-size: 2rem;
-      margin: 0 10px;
-      transition: 0.3s;
-    }
-    .discord { color: #7289da; }
-    .discord:hover {
-      color: #99aab5;
-      transform: scale(1.2);
-    }
-    .youtube { color: #ff0000; }
-    .youtube:hover {
-      color: #ff4d4d;
-      transform: scale(1.2);
-    }
-    .activation-section {
-      margin-top: 2rem;
-      color: white;
-    }
-    .activation-section input {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin-right: 1rem;
-      border-radius: 5px;
-    }
-    .activation-section button {
-      padding: 0.5rem 2rem;
-      background-color: #ff0057;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Прелоадер -->
+  <div class="preloader" id="preloader">
+    <div class="logo-loader">
+      <img src="logo.png" alt="Logo" class="preloader-logo" />
+      <div class="preloader-text">
+        <span>M</span><span>w</span><span>X</span>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Фонарик -->
+  <div class="spotlight" id="spotlight"></div>
+
+  <!-- Основной контент -->
   <header>
     <img src="logo.png" alt="MwX Logo">
     <nav>
@@ -123,16 +35,13 @@
   </header>
 
   <main>
-    <h2>Участников на сервере: 175</h2>
+    <h2>Участников на сервере: 170</h2>
     <h1>MwX</h1>
     <p>MwX — это универсальный хаб читов, конфигов и туториалов для улучшения игрового опыта. Простота, удобство и стиль в одном месте.</p>
-    <br>
-    <p>Получить топовый кфг - !role mwxcfg , в дискорд канале</p>
     <button class="btn" onclick="window.location.href='augustus.html'">Перейти в Augustus</button>
     <br><br>
     <button class="btn" onclick="window.location.href='fdp.html'">Перейти в FDPClient-b14</button>
 
-    <!-- Активация -->
     <div class="activation-section">
       <h3>Активировать роль</h3>
       <input type="text" id="discordNickname" placeholder="Введите ваш Discord никнейм">
@@ -145,35 +54,14 @@
     <a href="https://youtube.com/@mwx_llc?si=tNyqmdMbTPsFb8HX" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
   </footer>
 
-  <script>
-    function activateRole() {
-      const nickname = document.getElementById('discordNickname').value;
-      if (!nickname) {
-        alert('Пожалуйста, введите ваш никнейм!');
-        return;
-      }
+  <!-- Иконка подарка -->
+  <div class="gift-icon" id="giftIcon"><i class="fas fa-gift"></i></div>
 
-      // Отправить запрос на сервер для активации роли через API
-      fetch('/activate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nickname: nickname })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          alert('Роль "премиум" успешно активирована!');
-        } else {
-          alert('Ошибка активации. Проверьте правильность никнейма.');
-        }
-      })
-      .catch(error => {
-        console.error('Ошибка:', error);
-        alert('Произошла ошибка при активации роли.');
-      });
-    }
-  </script>
+  <!-- Меню подарка -->
+  <div class="gift-menu" id="giftMenu">
+    <p>!role mwxcfg - в дискорд сервере</p>
+  </div>
+
+  <script src="scritp.js"></script>
 </body>
 </html>
