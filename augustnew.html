@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Augustus | MwX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Exo 2', sans-serif;
+    }
+
+    /* Theme Variables */
+    :root {
+      --primary-color: #ff0057;
+      --secondary-color: #00ffcc;
+      --background-color: #0a0a23;
+      --background-gradient: #1a1a3e;
+      --text-color: #e0e0e0;
+      --shadow-color: rgba(255, 0, 87, 0.3);
+      --glow-color: #ff0057;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(255, 0, 87, 0.1);
+      --goal-hover-bg: rgba(0, 255, 204, 0.1);
+    }
+
+    /* Green Theme */
+    body.green-theme {
+      --primary-color: #00ff00;
+      --secondary-color: #00cc00;
+      --background-color: #0a230a;
+      --background-gradient: #1a3e1a;
+      --text-color: #d0ffd0;
+      --shadow-color: rgba(0, 255, 0, 0.3);
+      --glow-color: #00ff00;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(0, 255, 0, 0.1);
+      --goal-hover-bg: rgba(0, 204, 0, 0.1);
+    }
+
+    /* White Theme */
+    body.white-theme {
+      --primary-color: #1e90ff;
+      --secondary-color: #ff4500;
+      --background-color: #f0f0f0;
+      --background-gradient: #d0d0d0;
+      --text-color: #333;
+      --shadow-color: rgba(30, 144, 255, 0.3);
+      --glow-color: #1e90ff;
+      --section-bg: rgba(0, 0, 0, 0.05);
+      --hover-bg: rgba(30, 144, 255, 0.1);
+      --goal-hover-bg: rgba(255, 69, 0, 0.1);
+    }
+
+    body {
+      background: var(--background-color);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Dynamic Background */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, var(--background-gradient) 0%, var(--background-color) 70%);
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,0,87,0.3)"/></svg>') repeat;
+      animation: drift 60s linear infinite;
+      opacity: 0.3;
+    }
+
+    .white-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(30,144,255,0.3)"/></svg>') repeat;
+    }
+
+    .green-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(0,255,0,0.3)"/></svg>') repeat;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    /* Neon Glow */
+    .neon-glow {
+      animation: neonGlow 2s infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      0% { text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color); }
+      100% { text-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color), 0 0 60px var(--glow-color); }
+    }
+
+    /* Particles */
+    .particle {
+      position: fixed;
+      color: rgba(0, 255, 204, 0.5);
+      font-weight: bold;
+      font-size: 20px;
+      pointer-events: none;
+      animation: floatDown linear forwards;
+      z-index: 0;
+    }
+
+    .white-theme .particle {
+      color: rgba(30, 144, 255, 0.5);
+    }
+
+    .green-theme .particle {
+      color: rgba(0, 204, 0, 0.5);
+    }
+
+    @keyframes floatDown {
+      from {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    /* Orbiting Icons */
+    .orbiting-icon {
+      position: fixed;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      animation: orbit 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+
+    /* Spotlight */
+    .spotlight {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: transform 0.05s linear;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(10, 10, 35, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px var(--shadow-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .white-theme header {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    header img {
+      width: 60px;
+      filter: drop-shadow(0 0 10px var(--primary-color));
+      animation: pulseLogo 2s infinite;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+
+    /* Theme Switcher */
+    .theme-switcher {
+      position: relative;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .theme-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .theme-btn.black {
+      background: #000;
+      border: 2px solid #ff0057;
+    }
+
+    .theme-btn.green {
+      background: #00ff00;
+      border: 2px solid #00cc00;
+    }
+
+    .theme-btn.white {
+      background: #fff;
+      border: 2px solid #1e90ff;
+    }
+
+    .theme-btn:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px var(--primary-color);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 1rem;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 1rem 0;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin: 0.5rem;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--shadow-color), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      background: var(--primary-color);
+      color: #fff;
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+
+    /* Tooltip */
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip:hover::after {
+      content: 'В канале конфиг можете найти все кофиги';
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(34, 34, 34, 0.9);
+      backdrop-filter: blur(5px);
+      padding: 5px 10px;
+      border-radius: 6px;
+      color: #fff;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      z-index: 10;
+    }
+
+    .tooltip1 {
+      position: relative;
+    }
+
+    .tooltip1:hover::after {
+      content: 'Чтобы его получить создайте тикет в дискорд канале и напишите @prem';
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(34, 34, 34, 0.9);
+      backdrop-filter: blur(5px);
+      padding: 5px 10px;
+      border-radius: 6px;
+      color: #fff;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      z-index: 10;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .discord {
+      font-size: 2.5rem;
+      color: #7289da;
+      transition: 0.3s;
+    }
+
+    .discord:hover {
+      color: #99aab5;
+      transform: scale(1.2);
+    }
+
+    /* Gift Icon and Menu */
+    .gift-icon {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 3.5rem;
+      color: var(--secondary-color);
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 3;
+      filter: drop-shadow(0 0 10px var(--secondary-color));
+    }
+
+    .gift-icon:hover {
+      transform: scale(1.2);
+      color: var(--primary-color);
+      filter: drop-shadow(0 0 10px var(--primary-color));
+    }
+
+    .gift-menu {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: rgba(10, 10, 35, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px var(--shadow-color);
+      color: var(--secondary-color);
+      font-size: 1rem;
+      font-weight: 700;
+      z-index: 3;
+    }
+
+    .white-theme .gift-menu {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .gift-menu.active {
+      display: block;
+    }
+  </style>
+
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Orbiting Icons -->
+  <i class="fas fa-star orbiting-icon" style="top: 10%; left: 10%;"></i>
+  <i class="fas fa-bolt orbiting-icon" style="top: 20%; right: 10%;"></i>
+  <i class="fas fa-rocket orbiting-icon" style="bottom: 20%; left: 15%;"></i>
+
+  <!-- Spotlight -->
+  <div class="spotlight" id="spotlight"></div>
+
+  <header>
+    <img src="logo.png" alt="MwX Logo">
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="augustus.html">Augustus</a>
+      <a href="fdp.html">FDP</a>
+      <a href="https://youtube.com/@mwx_llc?si=Wj1mACsBS_iCAQJS">YT</a>
+      <div class="theme-switcher">
+        <button class="theme-btn black" data-theme="black" title="Black Theme"></button>
+        <button class="theme-btn green" data-theme="green" title="Green Theme"></button>
+        <button class="theme-btn white" data-theme="white" title="White Theme"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="neon-glow">Augustus</h1>
+    <p>Менее надежен от банов и киков по сравнению с FDP <br> но scaffold работает очень круто и не банится, <br> но килка хуже чем у FDP , кфг еще тестируются</p>
+    <button class="btn" onclick="window.open('https://f94.workupload.com/download/BaGd5e3q6K5', '_blank')">Скачать Чит</button>
+    <div class="tooltip">
+      <button class="btn" onclick="window.open('https://discord.gg/fGQMZq96hd', '_blank')">Скачать КФГ</button>
+    </div>
+    <div class="tooltip1">
+      <button class="btn" onclick="window.open('https://discord.gg/fGQMZq96hd', '_blank')">Приватный кфг</button>
+    </div>
+    <button class="btn" onclick="window.open('https://youtu.be/AYR6FpMP3wg?si=ep4cRRHHg-rmXzQi', '_blank')">Туториал</button>
+    <button class="btn" onclick="window.open('https://youtu.be/pd5_bAqWIq0?si=66av21SD6ExwQwyy', '_blank')">Мини обзор</button>
+  </main>
+
+  <footer>
+    <a href="https://discord.gg/zc3b4jxXkg" target="_blank" class="discord"><i class="fab fa-discord"></i></a>
+  </footer>
+
+  <!-- Gift Icon -->
+  <div class="gift-icon" id="giftIcon"><i class="fas fa-gift"></i></div>
+
+  <!-- Gift Menu -->
+  <div class="gift-menu" id="giftMenu">
+    <p>!role mwxcfg - в дискорд сервере</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const preloader = document.getElementById("preloader");
+      const spotlight = document.getElementById('spotlight');
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          preloader.classList.add("hidden");
+        }, 1500);
+      });
+
+      // Spotlight
+      document.addEventListener('mousemove', (e) => {
+        spotlight.style.left = e.clientX + 'px';
+        spotlight.style.top = e.clientY + 'px';
+      });
+
+      // Particles
+      const chars = ['✬', '❁', '❄', 'M', 'W', 'X'];
+      function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.innerText = chars[Math.floor(Math.random() * chars.length)];
+        particle.style.left = Math.random() * window.innerWidth + 'px';
+        particle.style.top = '-20px';
+        particle.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        particle.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 10000);
+      }
+      setInterval(createParticle, 250);
+
+      // Gift Menu
+      const giftIcon = document.getElementById('giftIcon');
+      const giftMenu = document.getElementById('giftMenu');
+      giftIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        giftMenu.classList.toggle('active');
+      });
+      document.addEventListener('click', () => {
+        giftMenu.classList.remove('active');
+      });
+
+      // Theme Switcher
+      const themeButtons = document.querySelectorAll('.theme-btn');
+      const body = document.body;
+      const savedTheme = localStorage.getItem('mwx_theme') || 'black';
+      body.classList.add(`${savedTheme}-theme`);
+
+      themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const theme = button.getAttribute('data-theme');
+          body.classList.remove('black-theme', 'green-theme', 'white-theme');
+          body.classList.add(`${theme}-theme`);
+          localStorage.setItem('mwx_theme', theme);
+        });
+      });
+
+      // Middle Mouse Scroll
+      let isMiddleMouseDown = false;
+      let startX, startY, scrollLeft, scrollTop;
+
+      document.addEventListener('mousedown', (e) => {
+        if (e.button === 1) {
+          isMiddleMouseDown = true;
+          startX = e.pageX;
+          startY = e.pageY;
+          scrollLeft = window.scrollX;
+          scrollTop = window.scrollY;
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isMiddleMouseDown) return;
+        const x = e.pageX;
+        const y = e.pageY;
+        const deltaX = x - startX;
+        const deltaY = y - startY;
+        window.scrollTo(scrollLeft - deltaX, scrollTop - deltaY);
+      });
+
+      document.addEventListener('mouseup', (e) => {
+        if (e.button === 1) {
+          isMiddleMouseDown = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

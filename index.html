@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MwX Cheats Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Exo 2', sans-serif;
+    }
+
+    /* Theme Variables */
+    :root {
+      --primary-color: #ff0057; /* Default: Pink (Black theme) */
+      --secondary-color: #00ffcc;
+      --background-color: #0a0a23;
+      --background-gradient: #1a1a3e;
+      --text-color: #e0e0e0;
+      --shadow-color: rgba(255, 0, 87, 0.3);
+      --glow-color: #ff0057;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(255, 0, 87, 0.1);
+      --goal-hover-bg: rgba(0, 255, 204, 0.1);
+    }
+
+    /* Green Theme */
+    body.green-theme {
+      --primary-color: #00ff00;
+      --secondary-color: #00cc00;
+      --background-color: #0a230a;
+      --background-gradient: #1a3e1a;
+      --text-color: #d0ffd0;
+      --shadow-color: rgba(0, 255, 0, 0.3);
+      --glow-color: #00ff00;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(0, 255, 0, 0.1);
+      --goal-hover-bg: rgba(0, 204, 0, 0.1);
+    }
+
+    /* White Theme */
+    body.white-theme {
+      --primary-color: #1e90ff;
+      --secondary-color: #ff4500;
+      --background-color: #f0f0f0;
+      --background-gradient: #d0d0d0;
+      --text-color: #333;
+      --shadow-color: rgba(30, 144, 255, 0.3);
+      --glow-color: #1e90ff;
+      --section-bg: rgba(0, 0, 0, 0.05);
+      --hover-bg: rgba(30, 144, 255, 0.1);
+      --goal-hover-bg: rgba(255, 69, 0, 0.1);
+    }
+
+    /* Blue Theme */
+    body.blue-theme {
+      --primary-color: #00b7eb;
+      --secondary-color: #00e5ff;
+      --background-color: #0a1a2d;
+      --background-gradient: #1a3a5e;
+      --text-color: #d0efff;
+      --shadow-color: rgba(0, 183, 235, 0.3);
+      --glow-color: #00b7eb;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(0, 183, 235, 0.1);
+      --goal-hover-bg: rgba(0, 229, 255, 0.1);
+    }
+
+    /* Purple Theme */
+    body.purple-theme {
+      --primary-color: #9b00ff;
+      --secondary-color: #cc00ff;
+      --background-color: #1a0a2d;
+      --background-gradient: #3a1a5e;
+      --text-color: #e0d0ff;
+      --shadow-color: rgba(155, 0, 255, 0.3);
+      --glow-color: #9b00ff;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(155, 0, 255, 0.1);
+      --goal-hover-bg: rgba(204, 0, 255, 0.1);
+    }
+
+    /* Orange Theme */
+    body.orange-theme {
+      --primary-color: #ff8c00;
+      --secondary-color: #ffbf00;
+      --background-color: #2d1a0a;
+      --background-gradient: #5e3a1a;
+      --text-color: #ffe0d0;
+      --shadow-color: rgba(255, 140, 0, 0.3);
+      --glow-color: #ff8c00;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(255, 140, 0, 0.1);
+      --goal-hover-bg: rgba(255, 191, 0, 0.1);
+    }
+
+    /* Red Theme */
+    body.red-theme {
+      --primary-color: #ff0000;
+      --secondary-color: #ff4040;
+      --background-color: #2d0a0a;
+      --background-gradient: #5e1a1a;
+      --text-color: #ffd0d0;
+      --shadow-color: rgba(255, 0, 0, 0.3);
+      --glow-color: #ff0000;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(255, 0, 0, 0.1);
+      --goal-hover-bg: rgba(255, 64, 64, 0.1);
+    }
+
+    /* Cyan Theme */
+    body.cyan-theme {
+      --primary-color: #00ffff;
+      --secondary-color: #00cccc;
+      --background-color: #0a2d2d;
+      --background-gradient: #1a5e5e;
+      --text-color: #d0ffff;
+      --shadow-color: rgba(0, 255, 255, 0.3);
+      --glow-color: #00ffff;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(0, 255, 255, 0.1);
+      --goal-hover-bg: rgba(0, 204, 204, 0.1);
+    }
+
+    /* Yellow Theme */
+    body.yellow-theme {
+      --primary-color: #ffff00;
+      --secondary-color: #cccc00;
+      --background-color: #2d2d0a;
+      --background-gradient: #5e5e1a;
+      --text-color: #ffffd0;
+      --shadow-color: rgba(255, 255, 0, 0.3);
+      --glow-color: #ffff00;
+      --section-bg: rgba(255, 255, 255, 0.05);
+      --hover-bg: rgba(255, 255, 0, 0.1);
+      --goal-hover-bg: rgba(204, 204, 0, 0.1);
+    }
+
+    body {
+      background: var(--background-color);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Dynamic Background */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, var(--background-gradient) 0%, var(--background-color) 70%);
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,0,87,0.3)"/></svg>') repeat;
+      animation: drift 60s linear infinite;
+      opacity: 0.3;
+    }
+
+    .white-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(30,144,255,0.3)"/></svg>') repeat;
+    }
+
+    .green-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(0,255,0,0.3)"/></svg>') repeat;
+    }
+
+    .blue-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(0,183,235,0.3)"/></svg>') repeat;
+    }
+
+    .purple-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(155,0,255,0.3)"/></svg>') repeat;
+    }
+
+    .orange-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,140,0,0.3)"/></svg>') repeat;
+    }
+
+    .red-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,0,0,0.3)"/></svg>') repeat;
+    }
+
+    .cyan-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(0,255,255,0.3)"/></svg>') repeat;
+    }
+
+    .yellow-theme .background::before {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,0,0.3)"/></svg>') repeat;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    /* Neon Glow */
+    .neon-glow {
+      animation: neonGlow 2s infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      0% { text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color); }
+      100% { text-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color), 0 0 60px var(--glow-color); }
+    }
+
+    /* Preloader */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .logo-loader {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .preloader-logo {
+      width: 80px;
+      height: auto;
+      animation: pulseLogo 1.5s infinite;
+    }
+
+    .preloader-text span {
+      display: inline-block;
+      font-size: 4rem;
+      color: var(--primary-color);
+      animation: glitch 1s linear infinite;
+    }
+
+    @keyframes glitch {
+      2%, 64% { transform: translate(2px, 0) skew(0deg); }
+      4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+      62% { transform: translate(0, 0) skew(5deg); }
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Particles */
+    .particle {
+      position: fixed;
+      color: rgba(0, 255, 204, 0.5);
+      font-weight: bold;
+      font-size: 20px;
+      pointer-events: none;
+      animation: floatDown linear forwards;
+      z-index: 0;
+    }
+
+    .white-theme .particle {
+      color: rgba(30, 144, 255, 0.5);
+    }
+
+    .green-theme .particle {
+      color: rgba(0, 204, 0, 0.5);
+    }
+
+    .blue-theme .particle {
+      color: rgba(0, 229, 255, 0.5);
+    }
+
+    .purple-theme .particle {
+      color: rgba(204, 0, 255, 0.5);
+    }
+
+    .orange-theme .particle {
+      color: rgba(255, 191, 0, 0.5);
+    }
+
+    .red-theme .particle {
+      color: rgba(255, 64, 64, 0.5);
+    }
+
+    .cyan-theme .particle {
+      color: rgba(0, 204, 204, 0.5);
+    }
+
+    .yellow-theme .particle {
+      color: rgba(204, 204, 0, 0.5);
+    }
+
+    @keyframes floatDown {
+      from {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    /* Orbiting Icons */
+    .orbiting-icon {
+      position: fixed;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      animation: orbit 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(10, 10, 35, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px var(--shadow-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .white-theme header {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    header img {
+      width: 60px;
+      filter: drop-shadow(0 0 10px var(--primary-color));
+      animation: pulseLogo 2s infinite;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+
+    /* Theme Button and Menu */
+    .theme-container {
+      position: relative;
+    }
+
+    .theme-toggle {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--secondary-color);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--secondary-color);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--shadow-color), transparent);
+      transition: 0.5s;
+    }
+
+    .theme-toggle:hover::before {
+      left: 100%;
+    }
+
+    .theme-toggle:hover {
+      background: var(--secondary-color);
+      color: #fff;
+      box-shadow: 0 0 15px var(--secondary-color);
+    }
+
+    .theme-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: rgba(10, 10, 35, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px var(--shadow-color);
+      z-index: 11;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      width: 120px;
+    }
+
+    .white-theme .theme-menu {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .theme-container:hover .theme-menu {
+      display: flex;
+    }
+
+    .theme-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .theme-btn.black {
+      background: #000;
+      border: 2px solid #ff0057;
+    }
+
+    .theme-btn.green {
+      background: #00ff00;
+      border: 2px solid #00cc00;
+    }
+
+    .theme-btn.white {
+      background: #fff;
+      border: 2px solid #1e90ff;
+    }
+
+    .theme-btn.blue {
+      background: #00b7eb;
+      border: 2px solid #00e5ff;
+    }
+
+    .theme-btn.purple {
+      background: #9b00ff;
+      border: 2px solid #cc00ff;
+    }
+
+    .theme-btn.orange {
+      background: #ff8c00;
+      border: 2px solid #ffbf00;
+    }
+
+    .theme-btn.red {
+      background: #ff0000;
+      border: 2px solid #ff4040;
+    }
+
+    .theme-btn.cyan {
+      background: #00ffff;
+      border: 2px solid #00cccc;
+    }
+
+    .theme-btn.yellow {
+      background: #ffff00;
+      border: 2px solid #cccc00;
+    }
+
+    .theme-btn:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px var(--primary-color);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 2rem;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 1rem 0;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin: 0.5rem;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--shadow-color), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      background: var(--primary-color);
+      color: #fff;
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+
+    /* Visitor Counter */
+    .visitor-counter {
+      background: var(--section-bg);
+      backdrop-filter: blur(10px);
+      color: var(--secondary-color);
+      padding: 0.5rem 2rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      box-shadow: 0 0 15px var(--shadow-color);
+      margin-bottom: 2rem;
+    }
+
+    /* Sections */
+    .sections-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 3rem;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .sections-container.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* News Section */
+    .news-section {
+      background: var(--section-bg);
+      backdrop-filter: blur(15px);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 600px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0 0 30px var(--shadow-color);
+      border: 1px solid var(--shadow-color);
+      transition: transform 0.3s ease;
+    }
+
+    .news-section:hover {
+      transform: translateY(-10px);
+    }
+
+    .news-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+
+    .news-item {
+      background: var(--section-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: 0.3s;
+    }
+
+    .news-item:hover {
+      background: var(--hover-bg);
+      transform: translateY(-5px);
+    }
+
+    .news-item h4 {
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+      font-size: 1.3rem;
+    }
+
+    .news-item p {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-color);
+    }
+
+    .news-date {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .white-theme .news-date {
+      color: #555;
+    }
+
+    .news-item a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .news-item a:hover {
+      color: var(--secondary-color);
+      text-shadow: 0 0 10px var(--secondary-color);
+    }
+
+    /* Goals Section */
+    .goals-section {
+      background: var(--section-bg);
+      backdrop-filter: blur(15px);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 30px var(--shadow-color);
+      border: 1px solid var(--shadow-color);
+      transition: transform 0.3s ease;
+    }
+
+    .goals-section:hover {
+      transform: translateY(-10px);
+    }
+
+    .goals-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+
+    .goal-item {
+      background: var(--section-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: 0.3s;
+    }
+
+    .goal-item:hover {
+      background: var(--goal-hover-bg);
+      transform: translateY(-5px);
+    }
+
+    .goal-item p {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--secondary-color);
+    }
+
+    .goal-item span {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .goal-links a {
+      margin: 0 15px;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .goal-links a:hover {
+      color: var(--secondary-color);
+      text-shadow: 0 0 10px var(--secondary-color);
+    }
+
+    /* Success Message */
+    .success-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--section-bg);
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px var(--primary-color);
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      z-index: 1001;
+      opacity: 0;
+      animation: fadeInOut 3s ease forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    }
+
+    /* Hidden Class */
+    .hidden {
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .discord, .youtube {
+      font-size: 2.5rem;
+      margin: 0 15px;
+      transition: 0.3s;
+    }
+
+    .discord { color: #7289da; }
+    .discord:hover { color: #99aab5; transform: scale(1.2); }
+    .youtube { color: #ff0000; }
+    .youtube:hover { color: #ff4d4d; transform: scale(1.2); }
+
+    /* Gift Icon and Menu */
+    .gift-icon {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 3.5rem;
+      color: var(--secondary-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 3;
+      filter: drop-shadow(0 0 10px var(--secondary-color));
+      opacity: 0;
+      animation: giftAppear 2s ease forwards, giftRotate 4s linear infinite;
+    }
+
+    @keyframes giftAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.5) rotate(0deg);
+        filter: drop-shadow(0 0 0 var(--secondary-color));
+      }
+      50% {
+        opacity: 0.7;
+        transform: translateY(-20px) scale(1.2) rotate(180deg);
+        filter: drop-shadow(0 0 15px var(--secondary-color));
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(360deg);
+        filter: drop-shadow(0 0 20px var(--secondary-color));
+      }
+    }
+
+    @keyframes giftRotate {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    @keyframes giftExplode {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(2); opacity: 0.5; filter: blur(5px); }
+      100% { transform: scale(3); opacity: 0; filter: blur(10px); }
+    }
+
+    .gift-icon.exploding {
+      animation: giftExplode 0.5s forwards;
+    }
+
+    .gift-icon:hover {
+      transform: scale(1.3) rotate(0deg);
+      color: var(--primary-color);
+      filter: drop-shadow(0 0 20px var(--primary-color));
+      animation: giftPulse 0.5s infinite alternate;
+    }
+
+    @keyframes giftPulse {
+      0% { transform: scale(1.3); }
+      100% { transform: scale(1.4); }
+    }
+
+    .gift-menu {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: rgba(10, 10, 35, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px var(--shadow-color);
+      color: var(--secondary-color);
+      font-size: 1rem;
+      font-weight: 700;
+      z-index: 3;
+    }
+
+    .white-theme .gift-menu {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .gift-menu.active {
+      display: block;
+    }
+
+    /* Switch Design Button */
+    .switch-design {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      padding: 1rem 2rem;
+      border: 2px solid var(--secondary-color);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 3;
+    }
+
+    .switch-design::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--shadow-color), transparent);
+      transition: 0.5s;
+    }
+
+    .switch-design:hover::before {
+      left: 100%;
+    }
+
+    .switch-design:hover {
+      background: var(--secondary-color);
+      color: #fff;
+      box-shadow: 0 0 20px var(--secondary-color);
+    }
+  </style>
+
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Orbiting Icons -->
+  <i class="fas fa-star orbiting-icon" style="top: 10%; left: 10%;"></i>
+  <i class="fas fa-bolt orbiting-icon" style="top: 20%; right: 10%;"></i>
+  <i class="fas fa-rocket orbiting-icon" style="bottom: 20%; left: 15%;"></i>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="logo-loader">
+      <img src="logo.png" alt="Logo" class="preloader-logo" />
+      <div class="preloader-text">
+        <span>M</span><span>w</span><span>X</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <header>
+    <img src="logo.png" alt="MwX Logo">
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="augustnew.html">Augustus</a>
+      <a href="fpdnex.html">FDP</a>
+      <a href="https://youtube.com/@mwx_llc?si=Wj1mACsBS_iCAQJS">YT</a>
+      <div class="theme-container">
+        <button class="theme-toggle">Тема</button>
+        <div class="theme-menu">
+          <button class="theme-btn black" data-theme="black" title="Black Theme"></button>
+          <button class="theme-btn green" data-theme="green" title="Green Theme"></button>
+          <button class="theme-btn white" data-theme="white" title="White Theme"></button>
+          <button class="theme-btn blue" data-theme="blue" title="Blue Theme"></button>
+          <button class="theme-btn purple" data-theme="purple" title="Purple Theme"></button>
+          <button class="theme-btn orange" data-theme="orange" title="Orange Theme"></button>
+          <button class="theme-btn red" data-theme="red" title="Red Theme"></button>
+          <button class="theme-btn cyan" data-theme="cyan" title="Cyan Theme"></button>
+          <button class="theme-btn yellow" data-theme="yellow" title="Yellow Theme"></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="visitor-counter" id="visitorCounter">
+      👥 Посетителей: <span id="visitorCount">...</span>
+    </div>
+    <h2>Участников на сервере: 190</h2>
+    <h1 class="neon-glow">MwX</h1>
+    <p>MwX — это универсальный хаб читов, конфигов и туториалов для улучшения игрового опыта. Простота, удобство и стиль в одном месте.</p>
+    <button class="btn" onclick="window.location.href='augustnew.html'">Перейти в Augustus</button>
+    <button class="btn" onclick="window.location.href='fpdnex.html'">Перейти в FDPClient-b14</button>
+
+    <!-- Sections Container -->
+    <div class="sections-container" id="sectionsContainer">
+      <!-- News Section -->
+      <section class="news-section" id="newsSection">
+        <h3 class="neon-glow">Последние новости</h3>
+        <div class="news-item">
+          <h4>🎨 Полное изменение дизайна сайта</h4>
+          <p>Сайт получил новый стиль и улучшенный интерфейс.</p>
+          <span class="news-date">03.05.2025</span>
+        </div>
+        <div class="news-item">
+          <h4>🛠 Обновление хаба</h4>
+          <p>Обновлена структура сайта, добавлен счётчик посещений и оптимизация загрузки.</p>
+          <span class="news-date">03.05.2025</span>
+        </div>
+        
+        <div class="news-item">
+          <h4>🔥 Новый конфиг Augustus v2.1</h4>
+          <p>Добавлены улучшенные aim-настройки и bypass для античита Matrix.</p>
+          <span class="news-date">03.05.2025</span>
+        </div>
+        <div class="news-item">
+          <h4>🔥 Новый конфиг Augustus</h4>
+          <p>Добавлены новые конфиги Augustus под Skywars.</p>
+          <span class="news-date">02.05.2025</span>
+        </div>
+        <div class="news-item">
+          <h4>📹 Новый ролик на YouTube</h4>
+          <p>Вышел новый ролик на канале. Смотрите по ссылке!</p>
+          <span class="news-date">01.05.2025</span>
+          <a href="https://youtu.be/iv5FjLISNbs?si=39vqaxnaOTAlANT8" target="_blank">Посмотреть видео</a>
+        </div>
+        
+      </section>
+
+      <!-- Goals Section -->
+      <section class="goals-section" id="goalsSection">
+        <h3 class="neon-glow">Цели</h3>
+        <div class="goal-item">
+          <p>Youtube Подписчики: <span>49/50</span></p>
+        </div>
+        <div class="goal-item">
+          <p>Discord участники: <span>190/200</span></p>
+        </div>
+        <div class="goal-item">
+          <p>Cfg шанс бана: <span>10%/0%</span></p>
+        </div>
+        <div class="goal-item">
+          <p>Просмотры на YouTube: <span>6500/10000</span></p>
+        </div>
+        <div class="goal-links">
+          <a href="https://www.youtube.com/@MwX_LLC" target="_blank">YouTube</a>
+          <a href="https://discord.gg/hhybxPWK" target="_blank">Discord</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://discord.gg/zc3b4jxXkg" target="_blank" class="discord"><i class="fab fa-discord"></i></a>
+    <a href="https://youtube.com/@mwx_llc?si=tNyqmdMbTPsFb8HX" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+  </footer>
+
+  <!-- Gift Icon -->
+  <div class="gift-icon" id="giftIcon"><i class="fas fa-gift"></i></div>
+
+  <!-- Gift Menu -->
+  <div class="gift-menu" id="giftMenu">
+    <p>Поздравляем! Вы нашли подарок! Используйте !role mwxcfg в Discord.</p>
+  </div>
+
+  <!-- Switch Design Button -->
+  <button class="switch-design" onclick="window.location.href='hel.html'">Старая версия</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const preloader = document.getElementById("preloader");
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          preloader.classList.add("hidden");
+        }, 1500);
+      });
+
+      // Particles
+      const chars = ['✬', '❁', '❄', 'M', 'W', 'X'];
+      function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.innerText = chars[Math.floor(Math.random() * chars.length)];
+        particle.style.left = Math.random() * window.innerWidth + 'px';
+        particle.style.top = '-20px';
+        particle.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        particle.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 10000);
+      }
+      setInterval(createParticle, 250);
+
+      // Gift Icon and Explosion
+      const giftIcon = document.getElementById('giftIcon');
+      const giftMenu = document.getElementById('giftMenu');
+
+      giftIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        giftIcon.classList.add('exploding');
+        setTimeout(() => {
+          giftIcon.style.opacity = '0';
+          giftMenu.classList.add('active');
+          setTimeout(() => {
+            giftIcon.classList.remove('exploding');
+            giftIcon.style.opacity = '1';
+          }, 500);
+        }, 500);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!giftMenu.contains(e.target) && e.target !== giftIcon) {
+          giftMenu.classList.remove('active');
+        }
+      });
+
+      // Visitor Counter
+      const countElement = document.getElementById('visitorCount');
+      let visits = localStorage.getItem('mwx_visits');
+      visits = visits ? parseInt(visits) + 1 : 1;
+      localStorage.setItem('mwx_visits', visits);
+      countElement.textContent = visits;
+
+      // Middle Mouse Scroll
+      let isMiddleMouseDown = false;
+      let startX, startY, scrollLeft, scrollTop;
+
+      document.addEventListener('mousedown', (e) => {
+        if (e.button === 1) {
+          isMiddleMouseDown = true;
+          startX = e.pageX;
+          startY = e.pageY;
+          scrollLeft = window.scrollX;
+          scrollTop = window.scrollY;
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isMiddleMouseDown) return;
+        const x = e.pageX;
+        const y = e.pageY;
+        const deltaX = x - startX;
+        const deltaY = y - startY;
+        window.scrollTo(scrollLeft - deltaX, scrollTop - deltaY);
+      });
+
+      document.addEventListener('mouseup', (e) => {
+        if (e.button === 1) {
+          isMiddleMouseDown = false;
+        }
+      });
+
+      // Theme Switcher
+      const themeButtons = document.querySelectorAll('.theme-btn');
+      const body = document.body;
+      const savedTheme = localStorage.getItem('mwx_theme') || 'black';
+      body.classList.add(`${savedTheme}-theme`);
+
+      themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const theme = button.getAttribute('data-theme');
+          body.classList.remove('black-theme', 'green-theme', 'white-theme', 'blue-theme', 'purple-theme', 'orange-theme', 'red-theme', 'cyan-theme', 'yellow-theme');
+          body.classList.add(`${theme}-theme`);
+          localStorage.setItem('mwx_theme', theme);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
